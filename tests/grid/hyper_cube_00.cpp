@@ -12,28 +12,36 @@
 
 using namespace std;
 
-int main()
+template<int dim>
+void run_test(array<double,dim> &length, array<int,dim> & n_intervals, int element)
 {
-    const int dim = 3;
-    array<double,dim> length = {1,2,3};
-    array<int,dim> n_intervals = {2,4,3};
-    
-
     HyperCube<dim> h_cube(length,n_intervals);
     
-    output_file << "testing element 16:" <<endl;
+    string log =  "dim = " + to_string(dim) + ", testing element = " + to_string(element);
+    
+    output_file << log <<endl;
 
-    auto dim_id = h_cube.flat_to_dim_id(16);
-
-    for (int i = 0; i < dim; i++)
-        output_file << "id[" << i << "] = "<< dim_id[i] <<endl;
-
-    output_file << "testing element 21:" << endl;
-
-    dim_id = h_cube.flat_to_dim_id(21);
+    auto dim_id = h_cube.flat_to_dim_id(element);
 
     for (int i = 0; i < dim; i++)
         output_file << "id[" << i << "] = "<< dim_id[i] <<endl;
+    
+    output_file << endl;
+}
 
+int main()
+{
+    array<double,3> length = {1,2,3};
+    array<int,3> n_intervals = {2,4,3};
+    
+    run_test<3>(length,n_intervals,16);
+    run_test<3>(length,n_intervals,21);
+    
+    array<double,2> l = {2,3};
+    array<int,2> ni = {4,3};
+    
+    run_test<2>(l,ni,6);
+    run_test<2>(l,ni,9);
+        
     return 0;
 }

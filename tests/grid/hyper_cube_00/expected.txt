@@ -1,8 +1,18 @@
-testing element 16:
+dim = 3, testing element = 16
 id[0] = 0
 id[1] = 0
 id[2] = 2
-testing element 21:
+
+dim = 3, testing element = 21
 id[0] = 1
 id[1] = 2
 id[2] = 2
+
+dim = 2, testing element = 6
+id[0] = 2
+id[1] = 1
+
+dim = 2, testing element = 9
+id[0] = 1
+id[1] = 2
+
