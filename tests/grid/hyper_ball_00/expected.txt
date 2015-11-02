@@ -1,0 +1,4 @@
+testing point: 1, 1, 
+resulting mapped point: 1, 1, 
+testing point: 0.707107, 0.707107, 1, 
+resulting mapped point: 0.707107, 0.707107, 1, 
