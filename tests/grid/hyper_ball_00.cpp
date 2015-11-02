@@ -39,8 +39,6 @@ int main()
     array<double,3> q = {r,t,f};
     
     run_test<3>(q);
-    
-
- 
+     
     return 0;
 }
