@@ -5,10 +5,7 @@ message("Configuring unit tests")
 
 include(CheckCXXCompilerFlag)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
 #--------------------------------------------------------------
-
-
 include_directories ("$ENV{TOY_LIB_PATH}/include")
 set (EXTRA_LIBS ${EXTRA_LIBS} $ENV{TOY_LIB_PATH}/bin/libgrid.a)
 set (EXTRA_LIBS ${EXTRA_LIBS} $ENV{TOY_LIB_PATH}/bin/liblac.a)
@@ -31,7 +28,6 @@ endforeach()
 
 endif(BLAS_FOUND)
 #--------------------------------------------------------------
-
 # Create the tests 
 if (submit_test)
   include(CTest)
